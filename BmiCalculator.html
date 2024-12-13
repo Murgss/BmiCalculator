@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+<body>
+    
+<input type="number" id="firstNum" placeholder="augstums (m)">
+<input type="number" id="secendNum" placeholder="svars (kg)">
+<button id="button">reikinat</button>
+<p id="output"></p>
+
+<script>
+let button = document.getElementById("button");
+button.addEventListener("click", function() {
+    let firstNum = parseFloat(document.getElementById("firstNum").value);
+    let secendNum = parseFloat(document.getElementById("secendNum").value);
+    let output = document.getElementById("output");
+
+    let kmi = secendNum / (firstNum * firstNum);
+
+    if (kmi <= 18.5) {
+        output.innerHTML = "Nepietiekams svars: " + kmi;
+    } else if (kmi < 24.9) {
+        output.innerHTML = "Normāls svars: " + kmi;
+    } else if (kmi < 29.9) {
+        output.innerHTML = "Liekais svars: " + kmi;
+    } else if (kmi >= 30) {
+        output.innerHTML = "Aptaukošanās: " + kmi;
+    }
+});
+</script>
+
+</body>
+</html>
